@@ -521,6 +521,8 @@
             ], [[VENDOR, 'Sony'], [MODEL, 'Xperia Tablet'], [TYPE, TABLET]], [
             /(?:sony)?(?:(?:(?:c|d)\d{4})|(?:so[-l].+))\sbuild\//i
             ], [[VENDOR, 'Sony'], [MODEL, 'Xperia Phone'], [TYPE, MOBILE]], [
+            /(l55t)/i,
+            ], [MODEL, [VENDOR, 'Sony'], [TYPE, MOBILE]], [
 
             /\s(ouya)\s/i,                                                      // Ouya
             /(nintendo)\s([wids3u]+)/i                                          // Nintendo
@@ -628,8 +630,15 @@
             /android.+(mi[\s\-_]*(?:one|one[\s_]plus|note lte)?[\s_]*(?:\d\w)?)\s+build/i    // Xiaomi Mi
             ], [[MODEL, /_/g, ' '], [VENDOR, 'Xiaomi'], [TYPE, MOBILE]], [
 
-            /android.+a000(1)\s+build/i                                         // OnePlus
+            /android.+a000(1)\s+build/i,                                       // OnePlus
+            /oneplus[\s-]?(\w+)*/i
             ], [MODEL, [VENDOR, 'OnePlus'], [TYPE, MOBILE]], [
+
+            /oppo[\s-]?(\w+)*/i                                             // OPPO
+            ], [MODEL, [VENDOR, 'Oppo'], [TYPE, MOBILE]], [
+
+            /(8692-a00)/i,                                                       // Qiku
+            ], [MODEL, [VENDOR, 'Qiku'], [TYPE, MOBILE]], [
 
             /\s(tablet)[;\/]/i,                                                 // Unidentifiable Tablet
             /\s(mobile)(?:[;\/]|\ssafari)/i                                     // Unidentifiable Mobile
